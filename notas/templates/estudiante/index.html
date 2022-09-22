@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block titulo %} Lista de estudiantes {% endblock %}
+
+{% block contenido %}
+    <div class="card">
+        <div class="card-header">
+            <a name="" id="" class="btn btn-success" href="{% url 'est_crear' %}" role="button">Agregar nuevo estudiante</a>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Estudiante</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>CEDULA</th>
+                        <th>APELLIDOS</th>
+                        <th>NOMBRES</th>
+                        <th>CORREO ELECTRÓNICO</th>
+                        <th>USUARIO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for estudiante in estudiantes %}
+                        <tr>
+                            <td>{{ estudiante.id }}</td>
+                            <td>{{ estudiante.cedula }}</td>
+                            <td>{{ estudiante.apellidos }}</td>
+                            <td>{{ estudiante.nombres }}</td>
+                            <td>{{ estudiante.correo }}</td>
+                            <td>{{ estudiante.usuario }}</td>
+                            <td>
+                                <a name="" id="" class="btn btn-info" href="{% url 'est_editar' estudiante.id %}" role="button">Editar</a>
+                                | <a name="" id="" class="btn btn-danger" href="{% url 'est_eliminar' estudiante.id %}" role="button">Borrar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+        <div class="card-footer text-muted">
+            Haga clic en el botón con la leyenda 'Editar' para ajustar la información o puede seleccionar 'Borrar' para eliminar el registro, tenga en cuenta que esta acción no se puede deshacer.
+        </div>
+    </div>
+{% endblock %}
+    

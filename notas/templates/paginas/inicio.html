@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block contenido %}
+    <div class="p-5 bg-light">
+        <div class="container">
+            <h1 class="display-3">Bienvenidos al sitio de su Institución</h1>
+            <p class="lead">Página de Docentes</p>
+            <hr class="my-2">
+
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{% url 'docente' %}" role="button">Ver listado</a>
+            </p>
+            <p class="lead">Página de Estudiantes</p>
+            <hr class="my-2">
+
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{% url 'estudiante' %}" role="button">Ver listado</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}
+    

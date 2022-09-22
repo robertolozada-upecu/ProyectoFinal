@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %} Editar estudiante {% endblock %}
+
+{% block contenido %}
+<div class="card">
+    <div class="card-header">
+        Editar información del estudiante
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del estudiante a editar</h4>
+        {% include 'estudiante/form.html' %}
+
+    </div>
+    <div class="card-footer text-muted">
+        Haga clic en el botón con la leyenda 'Enviar información' para actualizar la información, caso contrario haga clic en 'Cancelar'
+    </div>
+</div>
+{% endblock %}
+    
